@@ -1,0 +1,67 @@
+{
+  "users": {
+    "5023841": {
+      "login": "Simon",
+      "email": "simon12@gmail.com",
+      "passwordHash": "uyfsfhsjdf3jhfb21",
+      "icon": "undefined",
+      "balance": 83813,
+      "bets": {
+        "bets": {
+          "000001": {
+            "matchID": "00002",
+            "type": "team_victory",
+            "details": "1st_team_win",
+            "coefficient": 2,
+            "amount": 321893,
+            "status": "win"
+          },
+          "000002": {
+            "matchID": "00003",
+            "type": "team_victory",
+            "details": "2nd_team_win",
+            "coefficient": 2,
+            "amount": 321893,
+            "status": "pending"
+          },
+          "000003": {
+            "matchID": "00005",
+            "type": "team_victory",
+            "details": "1st_team_win",
+            "coefficient": 2,
+            "amount": 321893,
+            "status": "loose"
+          }
+        }
+      },
+      "friends": ["1053292", "3393171", "5553181"]
+    },
+    "1053292": {
+      "login": "John",
+      "email": "john@example.com",
+      "passwordHash": "hashed_password_here",
+      "icon": "url_to_icon",
+      "balance": 50000,
+      "bets": {},
+      "friends": ["5023841"]
+    },
+    "3393171": {
+      "login": "Alice",
+      "email": "alice@example.com",
+      "passwordHash": "hashed_password_here",
+      "icon": "url_to_icon",
+      "balance": 60000,
+      "bets": {},
+      "friends": ["5023841"]
+    },
+    "5553181": {
+      "login": "Bob",
+      "email": "bob@example.com",
+      "passwordHash": "hashed_password_here",
+      "icon": "url_to_icon",
+      "balance": 70000,
+      "bets": {},
+      "friends": ["5023841"]
+    }
+  }
+}

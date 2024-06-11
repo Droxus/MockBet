@@ -1,0 +1,28 @@
+{
+  "bets": {
+    "000001": {
+      "matchID": "00002",
+      "type": "team_victory",
+      "details": "1st_team_win",
+      "coefficient": 2,
+      "amount": 321893,
+      "status": "win"
+    },
+    "000002": {
+      "matchID": "00003",
+      "type": "team_victory",
+      "details": "2nd_team_win",
+      "coefficient": 2,
+      "amount": 321893,
+      "status": "pending"
+    },
+    "000003": {
+      "matchID": "00005",
+      "type": "team_victory",
+      "details": "1st_team_win",
+      "coefficient": 2,
+      "amount": 321893,
+      "status": "loose"
+    }
+  }
+}
