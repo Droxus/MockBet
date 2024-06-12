@@ -1,37 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
-import Button from '@mui/material/Button';
+import Home from './views/home/Home';
+import Ladder from './views/ladder/Ladder';
+import Favorite from './views/favorite/Favorite';
+import Auth from './views/auth/Auth'
+import Profile from './views/profile/Profile';
+import NoPage from './views/NoPage';
+import Navigator from './components/Navigator'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-      <Button variant="contained" color="secondary" className="text-4xl text-black">Click on me</Button>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Routes>
+        <Route path="/auth/*" element={<Auth />} />
+        <Route path="/" element={<Navigator />}>
+          <Route path="/*" element={<Home />} />
+          <Route path="/ladder" element={<Ladder />} />
+          <Route path="/favorite" element={<Favorite />} />
+          <Route path="/profile/*" element={<Profile />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+  );
 }
 
 export default App
