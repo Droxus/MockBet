@@ -10,8 +10,7 @@ import NoPage from '../NoPage';
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className='w-full h-full m-0'>
       <Routes>
         <Route path="tournaments" element={<Tournaments />} />
         <Route path="tournaments/:tournamentId/menu" element={<Menu />} />

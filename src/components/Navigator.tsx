@@ -1,28 +1,53 @@
-import { Outlet, Link } from "react-router-dom";
+import * as React from 'react';
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import HomeIcon from '@mui/icons-material/Home';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import GradeIcon from '@mui/icons-material/Grade';
 
-const Navigator = () => {
+export default function Navigator() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [value, setValue] = React.useState(location.pathname);
+
+  React.useEffect(() => {
+    setValue(location.pathname);
+  }, [location]);
+
+
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+    navigate(newValue);
+  };
+
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/tournaments">Home</Link>
-          </li>
-          <li>
-            <Link to="/ladder">Ladder</Link>
-          </li>
-          <li>
-            <Link to="/favorite">Favorite</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <BottomNavigation 
+        sx={{ width: '100%', position: 'fixed', bottom: 0, left: 0 }} 
+        value={value} 
+        onChange={handleChange}
+      >
+        <BottomNavigationAction
+          label="Home"
+          value="/tournaments"
+          icon={<HomeIcon />}
+        />
+        <BottomNavigationAction
+          label="Ladder"
+          value="/ladder"
+          icon={<LeaderboardIcon />}
+        />
+        <BottomNavigationAction
+          label="Favorite"
+          value="/favorite"
+          icon={<GradeIcon />}
+        />
+        <BottomNavigationAction label="Profile" value="/profile" icon={<AccountCircleIcon />} />
+      </BottomNavigation>
       <Outlet />
     </>
-  )
-};
-
-export default Navigator;
+  );
+}

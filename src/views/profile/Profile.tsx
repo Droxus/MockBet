@@ -9,10 +9,10 @@ function Profile() {
     <div>
       <h1>Profile</h1>
       <Routes>
-        <Route path="balance" element={<Balance />} />
-        <Route path="bets" element={<Bets />} />
-        <Route path="friends" element={<Friends />} />
-        <Route path="*" element={<NoPage />} />
+        <Route path="/balance" element={<Balance />}/>
+        <Route path="/bets" element={<Bets />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="profile/*" element={<NoPage />} />
       </Routes>
       <Outlet />
     </div>
