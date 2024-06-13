@@ -5,6 +5,10 @@ import getTournaments from '../../fakeDB/tournaments';
 import Loader from '../../components/Loader';
 import Tournament from '../../components/Tournament';
 
+const onTournamentClick = (id: string) => {
+  console.log("Hello world ", id);
+}
+
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +40,7 @@ const Tournaments = () => {
       <Paper elevation={3} className="p-1">
         <List>
           {tournaments.map((tournament) => (
-            <ListItem key={tournament.id} className="mb-4">
+            <ListItem onClick={() => {onTournamentClick(tournament.id)}} key={tournament.id} className="mb-4">
               <Tournament 
                 logo={tournament.logo}
                 name={tournament.name}

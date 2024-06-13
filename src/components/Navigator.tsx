@@ -14,6 +14,10 @@ export default function Navigator() {
   const [value, setValue] = React.useState(location.pathname);
 
   React.useEffect(() => {
+    if (location.pathname == "/") {
+      navigate("/tournaments");
+    }
+    
     setValue(location.pathname);
   }, [location]);
 
@@ -29,7 +33,7 @@ export default function Navigator() {
         sx={{ width: '100%', position: 'fixed', bottom: 0, left: 0 }} 
         value={value} 
         onChange={handleChange}
-      >
+        >
         <BottomNavigationAction
           label="Home"
           value="/tournaments"
