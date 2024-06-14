@@ -16,7 +16,7 @@ function Home() {
         <Route path="tournaments/:tournamentId/menu" element={<Menu />} />
         <Route path="tournaments/:tournamentId/fantasy" element={<Fantasy />} />
         <Route path="tournaments/:tournamentId/pickem" element={<Pickem />} />
-        <Route path="tournaments/:tournamentId/ladder" element={<Ladder />} />
+        <Route path="tournaments/:tournamentId/leaderboards" element={<Ladder />} />
         <Route path="tournaments/:tournamentId/matches" element={<Matches />} />
         <Route path="tournaments/:tournamentId/matches/:matchId" element={<MatchDetails />} />
         <Route path="*" element={<NoPage />} />

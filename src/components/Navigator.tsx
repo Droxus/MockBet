@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -11,14 +11,16 @@ export default function Navigator() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [value, setValue] = React.useState(location.pathname);
+  const [value, setValue] = useState(location.pathname);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const path = "/" + location.pathname.split("/")[1];
+
     if (location.pathname == "/") {
       navigate("/tournaments");
     }
     
-    setValue(location.pathname);
+    setValue(path);
   }, [location]);
 
 

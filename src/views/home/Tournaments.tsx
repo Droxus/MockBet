@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Typography, List, ListItem, Paper } from '@mui/material';
 import { formatDateRange } from '../../tool'
 import getTournaments from '../../fakeDB/tournaments';
 import Loader from '../../components/Loader';
 import Tournament from '../../components/Tournament';
 
-const onTournamentClick = (id: string) => {
-  console.log("Hello world ", id);
-}
-
 const Tournaments = () => {
+  const navigate = useNavigate();
   const [tournaments, setTournaments] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -27,6 +25,11 @@ const Tournaments = () => {
 
     fetchTournaments();
   }, []);
+
+  const onTournamentClick = (id: string) => {
+    const path = "/tournaments/" + id + "/menu"
+    navigate(path);
+  }
 
   if (loading) {
     return <Loader/>;
