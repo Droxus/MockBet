@@ -11,7 +11,7 @@ type TournamentCardProps = {
 const Tournament: React.FC<TournamentCardProps> = ({ logo, name, dateRange }) => {
   return(
     <Card
-      className="grid gap-0 grid-rows-1 grid-cols-[64px_minmax(100px,_1fr)_80px] h-16 w-full bg-white-400 border-2 border-black w-256 place-items-center">
+      className="grid gap-0 grid-rows-1 grid-cols-[64px_minmax(100px,_1fr)_80px] h-16 w-full max-w-lg bg-white-400 border-2 border-black place-items-center">
       {logo ? (
         <img src={logo} alt="logo" className="w-10 h-10 mr-4" />
       ) : (

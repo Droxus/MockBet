@@ -36,11 +36,11 @@ const Tournaments = () => {
   }
 
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
       <Typography variant="h3" component="h3" gutterBottom>
         Tournaments Page
       </Typography>
-      <Paper elevation={3} className="p-1">
+      <Paper elevation={3} className="p-1 w-full max-w-lg">
         <List>
           {tournaments.map((tournament) => (
             <ListItem onClick={() => {onTournamentClick(tournament.id)}} key={tournament.id} className="mb-4">

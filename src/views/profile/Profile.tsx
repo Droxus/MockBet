@@ -3,12 +3,13 @@ import Balance from './Balance';
 import Bets from './Bets';
 import Friends from './Friends';
 import NoPage from '../NoPage';
+import ProfilePage from '../../components/ProfilePage';
 
 function Profile() {
   return (
     <div>
-      <h1>Profile</h1>
       <Routes>
+        <Route path="/" element={<ProfilePage username="Droxus288337" id={628348273} friends={9999} bets={9999} won={4444}  />}/>
         <Route path="/balance" element={<Balance />}/>
         <Route path="/bets" element={<Bets />} />
         <Route path="/friends" element={<Friends />} />
