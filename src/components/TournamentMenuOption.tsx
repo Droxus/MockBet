@@ -23,7 +23,7 @@ const TournamentMenuOption: React.FC<TournamentMenuOptionProps> = ({title, descr
   return (
     <Card
     onClick={() => {onMenuOptionClick(title)}}
-    className="flex items-center w-full max-w-lg p-4 bg-gray-200 rounded-lg shadow-md"
+    className="flex items-center w-full max-w-lg p-4 bg-white-200 border-2 rounded-lg shadow-md"
   >
     <EmojiEventsIcon className="w-12 h-12 mr-4" />
     <CardContent>

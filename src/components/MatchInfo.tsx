@@ -1,3 +1,14 @@
+// import React from 'react';
+
+// const MatchInfo: React.FC = () => {
+//   return (
+//     <h1>Hello</h1>
+//   );
+// };
+
+// export default MatchInfo;
+
+
 import * as React from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import { Card, Typography } from '@mui/material';
@@ -18,7 +29,7 @@ type MatchProps = {
   date: string;
 };
 
-const Match: React.FC<MatchProps> = ({ id, homeTeam, awayTeam, date }) => {
+const MatchInfo: React.FC<MatchProps> = ({ id, homeTeam, awayTeam, date }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,8 +49,8 @@ const Match: React.FC<MatchProps> = ({ id, homeTeam, awayTeam, date }) => {
 
   return (
     <Card onClick={() => {onMatchClick(id)}}
-     className="w-full max-w-lg p-1 bg-white-200 border-2 rounded-lg shadow-md my-2">
-      <div className="flex items-center justify-between">
+     className="w-full max-w-lg h-40 p-1 bg-white-200 border-2 rounded-lg shadow-md my-2">
+      <div className="flex items-center h-28 justify-between">
         <div className="flex items-center w-2/4">
           {renderLogo(homeTeam.logo)}
           <div className="ml-1 w-full">
@@ -67,4 +78,4 @@ const Match: React.FC<MatchProps> = ({ id, homeTeam, awayTeam, date }) => {
   );
 };
 
-export default Match;
+export default MatchInfo;
